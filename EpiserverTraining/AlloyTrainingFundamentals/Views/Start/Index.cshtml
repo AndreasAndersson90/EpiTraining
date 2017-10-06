@@ -1,0 +1,18 @@
+﻿@using EPiServer.Core
+@using EPiServer.Web.Mvc.Html
+
+@model AlloyTrainingFundamentals.Models.Pages.StartPage
+
+<h1>
+    @Html.PropertyFor(m => m.Heading)
+    
+    @if (string.IsNullOrWhiteSpace(Model.Heading))
+    { 
+        @Html.DisplayFor(m => m.Name)
+    }
+    else
+    { 
+        @Html.DisplayFor(m => m.Heading)
+    }
+</h1>
+
