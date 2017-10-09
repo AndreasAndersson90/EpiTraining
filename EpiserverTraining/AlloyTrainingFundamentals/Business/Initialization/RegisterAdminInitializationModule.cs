@@ -1,14 +1,14 @@
-﻿using EPiServer;
+﻿using System.Configuration;
+using System.Linq;
+using System.Web.Security;
+using EPiServer;
 using EPiServer.Core;
 using EPiServer.Framework;
 using EPiServer.Framework.Initialization;
 using EPiServer.Security;
 using EPiServer.ServiceLocation;
-using System.Configuration;
-using System.Linq;
-using System.Web.Security;
 
-namespace AlloyTraining.Business.Initialization
+namespace AlloyTrainingFundamentals.Business.Initialization
 {
     [InitializableModule]
     [ModuleDependency(typeof(EPiServer.Web.InitializationModule))]

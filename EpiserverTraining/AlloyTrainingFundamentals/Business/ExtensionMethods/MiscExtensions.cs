@@ -1,11 +1,11 @@
-﻿using EPiServer;
+﻿using System;
+using System.Text;
+using EPiServer;
 using EPiServer.Core;
 using EPiServer.Search;
 using EPiServer.ServiceLocation;
-using System;
-using System.Text;
 
-namespace AlloyTraining.Business.ExtensionMethods
+namespace AlloyTrainingFundamentals.Business.ExtensionMethods
 {
     public static class MiscExtensions
     {

@@ -1,22 +1,19 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
+using AlloyTraining;
 using EPiServer.Core;
 using EPiServer.DataAbstraction;
 using EPiServer.DataAnnotations;
-using EPiServer.SpecializedProperties;
 
 namespace AlloyTrainingFundamentals.Models.Pages
 {
-    [ContentType(
-        DisplayName = "Start", 
-        GUID = "07347341-dc09-4b38-8867-5fbb5bbe8292",
-        Description = "The startpage",
-        GroupName = SiteGroupNames.Specialized)]
-    public class StartPage : PageData
+    [ContentType(DisplayName = "Start",
+        GroupName = SiteGroupNames.Specialized,
+        Description = "The home page for a website with an area for blocks and partial pages.")]
+    [SiteStartIcon]
+    public class StartPage : SitePageData
     {
         [CultureSpecific]
-        [Display(
-            Name = "Heading",
+        [Display(Name = "Heading",
             Description = "If the Heading is not set, the page falls back to showing the Name.",
             GroupName = SystemTabNames.Content,
             Order = 10)]
@@ -29,5 +26,9 @@ namespace AlloyTrainingFundamentals.Models.Pages
             Order = 20)]
         public virtual XhtmlString MainBody { get; set; }
 
+        [CultureSpecific]
+        [Display(Name = "Footer text",
+            GroupName = SiteTabNames.SiteSettings, Order = 100)]
+        public virtual string FooterText { get; set; }
     }
 }

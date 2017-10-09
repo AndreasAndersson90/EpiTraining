@@ -1,12 +1,12 @@
-﻿using EPiServer;
+﻿using System.Collections.Generic;
+using System.Linq;
+using EPiServer;
 using EPiServer.Core;
 using EPiServer.Filters;
 using EPiServer.Framework.Web;
 using EPiServer.ServiceLocation;
-using System.Collections.Generic;
-using System.Linq;
 
-namespace AlloyTraining.Business.ExtensionMethods
+namespace AlloyTrainingFundamentals.Business.ExtensionMethods
 {
     /// <summary>
     /// Extension methods for content
