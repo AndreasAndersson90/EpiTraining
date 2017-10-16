@@ -1,0 +1,26 @@
+﻿@using AlloyTrainingFundamentals.Business.ExtensionMethods 
+@using AlloyTrainingFundamentals.Models.Pages 
+@using AlloyTrainingFundamentals.Models.ViewModels
+@using EPiServer.Core
+ @model AlloyTrainingFundamentals.Models.ViewModels.IPageViewModel<AlloyTrainingFundamentals.Models.Pages.SitePageData>
+<ul> 
+    <li>
+         @Html.ContentLink(ContentReference.StartPage)
+        <ul>
+            @foreach (PageData page in Html.GetStartPageChildren())
+            {
+                <li>@Html.ContentLink(page.ContentLink)</li>
+            }
+        </ul>
+    </li>
+    <li>
+         @if (User.Identity.IsAuthenticated)
+              {
+                  <a href="/en/logout">Log out @User.Identity.Name</a>
+              }
+              else
+              {
+                  <a href="@FormsAuthentication.LoginUrl?ReturnUrl= @Model.CurrentPage.PageLink.ExternalURLFromReference()">Log in</a>
+              }
+    </li>
+</ul>

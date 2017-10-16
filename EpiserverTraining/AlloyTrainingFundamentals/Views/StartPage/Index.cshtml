@@ -12,5 +12,9 @@
               @Html.DisplayFor(m => m.CurrentPage.Heading)
           }
 </h1>
-<div> @Html.PropertyFor(m => m.CurrentPage.MainBody)
+<div>
+    @Html.PropertyFor(m => m.CurrentPage.MainBody)
 </div>
+
+@Html.PropertyFor(m => m.CurrentPage.MainContentArea,
+    new { CssClass = "row equal-height" })

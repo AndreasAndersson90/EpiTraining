@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using AlloyTraining;
+using AlloyTraining.Models.Pages;
 using EPiServer.Core;
 using EPiServer.DataAbstraction;
 using EPiServer.DataAnnotations;
@@ -30,5 +31,14 @@ namespace AlloyTrainingFundamentals.Models.Pages
         [Display(Name = "Footer text",
             GroupName = SiteTabNames.SiteSettings, Order = 100)]
         public virtual string FooterText { get; set; }
+
+        [CultureSpecific]
+        [Display(Name = "Main content area",
+            Description = "Drag and drop images, blocks, and pages with partial templates.",
+            GroupName = SystemTabNames.Content,
+            Order = 30)]
+        [AllowedTypes(typeof(StandardPage), typeof(BlockData), typeof(ImageData), typeof(ProductPage))]
+        public virtual ContentArea MainContentArea { get; set; }
+
     }
 }
